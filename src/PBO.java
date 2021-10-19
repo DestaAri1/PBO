@@ -10,9 +10,16 @@ public class PBO {
     int penghapus, g;
     int penggaris, h;
     int all_a;
+    int all_b;
+    int all_c;
+    int all_d;
+    int all_e;
+    int all_f;
+    int all_g;
+    int all_h;
     int order;
     int total_belanja;
-    String nama, jawab, order1;
+    String nama, jawab, order1, order2, order3, order4, order5, order6, order7, order8;
 
     Scanner input = new Scanner(System.in);
 
@@ -55,6 +62,48 @@ void transaksi(){
                 all_a = input.nextInt();
                 a = spidol_biasa * all_a;
                 order1 = "Spidol";
+                break;
+            case 2 :
+                System.out.println("Masukkan Jumlah Barang : ");
+                all_b = input.nextInt();
+                b = pulpen * all_b;
+                order2 = "Pulpen";
+                break;
+            case 3 :
+                System.out.println("Masukkan Jumlah Barang : ");
+                all_c = input.nextInt();
+                c = pensil * all_c;
+                order3 = "Pensil";
+                break;
+            case 4 :
+                System.out.println("Masukkan Jumlah Barang : ");
+                all_d = input.nextInt();
+                d = spidol_papan_tulis * all_d;
+                order4 = "Spidol Whiteboard";
+                break;
+            case 5 :
+                System.out.println("Masukkan Jumlah Barang : ");
+                all_e = input.nextInt();
+                e = penghapus_spidol_papan * all_e;
+                order5 = "Penghapus Whiteboard";
+                break;
+            case 6 :
+                System.out.println("Masukkan Jumlah Barang : ");
+                all_f = input.nextInt();
+                f = tipe_X * all_f;
+                order6 = "Tip X";
+                break;
+            case 7 :
+                System.out.println("Masukkan Jumlah Barang : ");
+                all_g = input.nextInt();
+                g = penghapus * all_g;
+                order7 = "Penghapus";
+                break;
+            case 8 :
+                System.out.println("Masukkan Jumlah Barang : ");
+                all_h = input.nextInt();
+                h = penggaris * all_h;
+                order8 = "Penggaris";
                 break;
         }
         System.out.println("Ingin Menambah Barang? y/n");
