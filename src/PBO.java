@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.jar.Attributes.Name;
 
 public class PBO {
     int spidol_biasa, a;
@@ -10,13 +9,10 @@ public class PBO {
     int tipe_X, f;
     int penghapus, g;
     int penggaris, h;
-    int total_beli;
+    int all_a;
+    int order;
     int total_belanja;
-    int total;
-    int bayar;
-    int kembalian;
-    int kurang;
-    String nama, jawab, order;
+    String nama, jawab, order1;
 
     Scanner input = new Scanner(System.in);
 
@@ -52,5 +48,17 @@ void transaksi(){
         System.out.println("7. Penghapus            = Rp. 1000");
         System.out.println("8. Penggaris            = Rp. 2000");
         System.out.println("Pilih Produk : ");
+        order = input.nextInt();
+        switch(order){
+            case 1 :
+                System.out.println("Masukkan Jumlah Barang : ");
+                all_a = input.nextInt();
+                a = spidol_biasa * all_a;
+                order1 = "Spidol";
+                break;
+        }
+        System.out.println("Ingin Menambah Barang? y/n");
+        jawab = input.next();
+    }while (jawab.equals("y"));
 }
 }
