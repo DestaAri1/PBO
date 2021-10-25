@@ -19,15 +19,18 @@ public class PBO {
     int all_h;
     int order;
     int total_belanja;
+    boolean pesan1, pesan2, pesan3, pesan4, pesan5, pesan6, pesan7, pesan8;
+    int bayar, kurang, kembali;
     String nama, jawab, order1, order2, order3, order4, order5, order6, order7, order8;
 
     Scanner input = new Scanner(System.in);
 
         public static void main(String[] args) {
-        PBO object = new PBO();
+        PBO obj = new PBO();
+        obj.Toko();
     }
 
-void transaksi(){
+void Toko(){
     spidol_biasa = 3500;
     pulpen = 2500;
     pensil = 2000;
@@ -62,52 +65,106 @@ void transaksi(){
                 all_a = input.nextInt();
                 a = spidol_biasa * all_a;
                 order1 = "Spidol";
+                pesan1=true;
                 break;
             case 2 :
                 System.out.println("Masukkan Jumlah Barang : ");
                 all_b = input.nextInt();
                 b = pulpen * all_b;
                 order2 = "Pulpen";
+                pesan2=true;
                 break;
             case 3 :
                 System.out.println("Masukkan Jumlah Barang : ");
                 all_c = input.nextInt();
                 c = pensil * all_c;
                 order3 = "Pensil";
+                pesan3=true;
                 break;
             case 4 :
                 System.out.println("Masukkan Jumlah Barang : ");
                 all_d = input.nextInt();
                 d = spidol_papan_tulis * all_d;
                 order4 = "Spidol Whiteboard";
+                pesan4=true;
                 break;
             case 5 :
                 System.out.println("Masukkan Jumlah Barang : ");
                 all_e = input.nextInt();
                 e = penghapus_spidol_papan * all_e;
                 order5 = "Penghapus Whiteboard";
+                pesan5=true;
                 break;
             case 6 :
                 System.out.println("Masukkan Jumlah Barang : ");
                 all_f = input.nextInt();
                 f = tipe_X * all_f;
                 order6 = "Tip X";
+                pesan6=true;
                 break;
             case 7 :
                 System.out.println("Masukkan Jumlah Barang : ");
                 all_g = input.nextInt();
                 g = penghapus * all_g;
                 order7 = "Penghapus";
+                pesan7=true;
                 break;
             case 8 :
                 System.out.println("Masukkan Jumlah Barang : ");
                 all_h = input.nextInt();
                 h = penggaris * all_h;
                 order8 = "Penggaris";
+                pesan8=true;
                 break;
         }
         System.out.println("Ingin Menambah Barang? y/n");
         jawab = input.next();
     }while (jawab.equals("y"));
+
+    total_belanja=a+b+c+d+e+f+g+h;
+    System.out.println("Nama : "+nama);
+    System.out.println("List Produk yang dibeli");
+    System.out.println("   Nama Barang  |  Harga  |  Jumlah Barang  |  Total Harga  ");
+    if (pesan1=true) {
+        System.out.println("Spidol                  :  "+spidol_biasa+"    "+all_a+"   "+a);
+    }
+    if (pesan2=true) {
+        System.out.println("Pulpen                  :  "+pulpen+"    "+all_b+"   "+b);
+    }
+    if (pesan3=true) {
+        System.out.println("Pensil                  :  "+pensil+"    "+all_c+"   "+c);
+    }
+    if (pesan4=true) {
+        System.out.println("Spidol Whiteboard       :  "+spidol_papan_tulis+"    "+all_d+"   "+d);
+    }
+    if (pesan5=true) {
+        System.out.println("Penghapus Whiteboard    :  "+penghapus_spidol_papan+"    "+all_e+"   "+e);
+    }
+    if (pesan6=true) {
+        System.out.println("Tip X                   :  "+tipe_X+"    "+all_f+"   "+f);
+    }
+    if (pesan7=true) {
+        System.out.println("Penghapus               :  "+penghapus+"    "+all_g+"   "+g);
+    }
+    if (pesan8=true) {
+        System.out.println("Penggaris               :  "+penggaris+"    "+all_h+"   "+h);
+    }
+    System.out.println("========================================");
+    System.out.println("Total Belanja Anda Sebesar   :     Rp. "+total_belanja); 
+    System.out.println("Masukkan Nominal    :       Rp. ");
+    bayar=input.nextInt();
+        while(total_belanja<bayar) {
+        if (bayar<total_belanja) {
+            kurang = total_belanja - bayar;
+            System.out.println("--------- Warning! ---------");
+            System.out.println("Mohon maaf uang anda kurang :        Rp. "+kurang);
+            System.out.println("----------------------------");
+        } else {
+            kembali = bayar - total_belanja;
+            System.out.println("Kembalian anda :        Rp. "+kembali);
+            System.out.println("Terimakasih "+nama+" Telah Menggunakan Jasa Kami ");
+            break;
+        }
+    }
 }
 }
